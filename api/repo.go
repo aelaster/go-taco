@@ -1,6 +1,9 @@
 package api
 
-import "github.com/aelaster/go-taco/model"
+import (
+	"github.com/aelaster/go-taco/model"
+	"strings"
+)
 
 var currentId int
 
@@ -25,7 +28,7 @@ func RepoCalculateCost(items model.OrderItems) model.OrderCost {
 	var totalQuantity = 0
 	for _, item := range items {
 		for _, menuitem := range menuitems {
-			if menuitem.Name == item.Name {
+			if strings.ToLower(menuitem.Name) == strings.ToLower(item.Name) {
 				totalQuantity+=item.Quantity
 				totalCost+=item.Quantity*menuitem.Price
 			}
