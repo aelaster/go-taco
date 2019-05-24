@@ -9,7 +9,7 @@ import (
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
-	_, _ = fmt.Fprintf(w, "https://github.com/aelaster/go-taco/");
+	_, _ = fmt.Fprintf(w, "https://github.com/aelaster/go-taco/")
 }
 
 func MenuItemCalculate(w http.ResponseWriter, r *http.Request) {
@@ -27,12 +27,12 @@ func MenuItemCalculate(w http.ResponseWriter, r *http.Request) {
 		if err := json.NewEncoder(w).Encode(err); err != nil {
 			panic(err)
 		}
-	}
-
-	t := RepoCalculateCost(orderitems)
-	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
-	w.WriteHeader(http.StatusCreated)
-	if err := json.NewEncoder(w).Encode(t); err != nil {
-		panic(err)
+	} else {
+		t := RepoCalculateCost(orderitems)
+		w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+		w.WriteHeader(http.StatusOK)
+		if err := json.NewEncoder(w).Encode(t); err != nil {
+			panic(err)
+		}
 	}
 }
