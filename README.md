@@ -47,7 +47,7 @@ __REQUEST:__
 __RESPONSE:__
 ```json
 {
-    "totalcost": 252,
+    "totalcost": 2520,
     "totalquantity": 10
 }
 ```

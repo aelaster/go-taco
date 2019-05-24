@@ -20,19 +20,19 @@ func RepoCreateMenuItem(t MenuItem) MenuItem {
 }
 
 func RepoCalculateCost(items OrderItems) OrderCost {
-	var totalCost = 0.0
+	var totalCost = 0
 	var totalQuantity = 0
 	for _, item := range items {
 		for _, menuitem := range menuitems {
 			if menuitem.Name == item.Name {
 				totalQuantity+=item.Quantity
-				totalCost+=float64(item.Quantity)*float64(menuitem.Price)
+				totalCost+=item.Quantity*menuitem.Price
 			}
 		}
 	}
 
 	if totalQuantity >= 4 {
-		totalCost*=.8
+		totalCost = (totalCost * 4) / 5
 	}
 
 	return OrderCost{TotalCost: totalCost, TotalQuantity: totalQuantity}
