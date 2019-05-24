@@ -17,7 +17,7 @@ If a customer orders 4 or more tacos, then a 20% discount should be applied to t
 Taco Loco wants you to define the data format for the request and response, and prefers using JSON.
 
 ---
-To launch the server, clone this repo and, in the root directory, run `go run *.go` to launch the server.
+Run `go run *.go` to launch the server.
 
 __ENDPOINT:__
 ```POST http://localhost:8080/calculate```
