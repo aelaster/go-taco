@@ -35,5 +35,5 @@ func RepoCalculateCost(items OrderItems) OrderCost {
 		totalCost*=.8
 	}
 
-	return OrderCost{TotalCost: totalCost/100, TotalQuantity: totalQuantity}
+	return OrderCost{TotalCost: totalCost, TotalQuantity: totalQuantity}
 }

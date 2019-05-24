@@ -47,7 +47,8 @@ __REQUEST:__
 __RESPONSE:__
 ```json
 {
-    "totalcost": 25.2,
+    "totalcost": 252,
     "totalquantity": 10
 }
 ```
+Total cost is returned in cents.
