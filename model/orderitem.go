@@ -1,4 +1,4 @@
-package main
+package model
 
 type OrderItem struct {
 	Id        int     	`json:"id"`

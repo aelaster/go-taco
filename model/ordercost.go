@@ -1,4 +1,4 @@
-package main
+package model
 
 type OrderCost struct {
 	TotalCost     	int   `json:"totalcost"`

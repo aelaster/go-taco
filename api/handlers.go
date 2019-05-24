@@ -1,8 +1,9 @@
-package main
+package api
 
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/aelaster/go-taco/model"
 	"io"
 	"io/ioutil"
 	"net/http"
@@ -13,7 +14,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 }
 
 func MenuItemCalculate(w http.ResponseWriter, r *http.Request) {
-	var orderitems OrderItems
+	var orderitems model.OrderItems
 	body, err := ioutil.ReadAll(io.LimitReader(r.Body, 1048576))
 	if err != nil {
 		panic(err)

@@ -1,6 +1,7 @@
-package main
+package api
 
 import (
+	"github.com/aelaster/go-taco/utils"
 	"github.com/gorilla/mux"
 	"net/http"
 )
@@ -12,7 +13,7 @@ func NewRouter() *mux.Router {
 		var handler http.Handler
 
 		handler = route.HandlerFunc
-		handler = Logger(handler, route.Name)
+		handler = utils.Logger(handler, route.Name)
 
 		router.
 			Methods(route.Method).

@@ -1,6 +1,8 @@
-package main
+package api
 
-import "net/http"
+import (
+	"net/http"
+)
 
 type Route struct {
 	Name        string

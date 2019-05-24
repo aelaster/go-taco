@@ -1,4 +1,4 @@
-package main
+package model
 
 type MenuItem struct {
 	Id        int      	`json:"id"`
