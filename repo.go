@@ -31,7 +31,7 @@ func RepoCalculateCost(items OrderItems) OrderCost {
 		}
 	}
 
-	if totalQuantity<4 {
+	if totalQuantity >= 4 {
 		totalCost*=.8
 	}
 
