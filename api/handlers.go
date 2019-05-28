@@ -25,7 +25,7 @@ func MenuItemCalculate(w http.ResponseWriter, r *http.Request) {
 	if err := json.Unmarshal(body, &orderitems); err != nil {
 		w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 		w.WriteHeader(422) // unprocessable entity
-		if err := json.NewEncoder(w).Encode(err); err != nil {
+		if err := json.NewEncoder(w).Encode(map[string]string{"error": err.Error()}); err != nil {
 			panic(err)
 		}
 	} else {
