@@ -7,7 +7,7 @@ import (
 
 var currentId int
 
-var menuitems model.MenuItems
+var menuItems model.MenuItems
 
 func init() {
 	RepoCreateMenuItem(model.MenuItem{Name: "Veggie Taco", Price: 250})
@@ -19,7 +19,7 @@ func init() {
 func RepoCreateMenuItem(t model.MenuItem) model.MenuItem {
 	currentId += 1
 	t.Id = currentId
-	menuitems = append(menuitems, t)
+	menuItems = append( menuItems, t )
 	return t
 }
 
@@ -27,16 +27,16 @@ func RepoCalculateCost(items model.OrderItems) model.OrderCost {
 	var totalCost = 0
 	var totalQuantity = 0
 	for _, item := range items {
-		for _, menuitem := range menuitems {
-			if strings.ToLower(menuitem.Name) == strings.ToLower(item.Name) {
-				totalQuantity+=item.Quantity
-				totalCost+=item.Quantity*menuitem.Price
+		for _, menuItem := range menuItems {
+			if strings.ToLower(menuItem.Name) == strings.ToLower(item.Name) {
+				totalQuantity += item.Quantity
+				totalCost += item.Quantity * menuItem.Price
 			}
 		}
 	}
 
 	if totalQuantity >= 4 {
-		totalCost = (totalCost * 4) / 5
+		totalCost = ( totalCost * 4 ) / 5
 	}
 
 	return model.OrderCost{TotalCost: totalCost, TotalQuantity: totalQuantity}
