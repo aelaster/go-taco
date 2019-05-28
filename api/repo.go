@@ -1,8 +1,9 @@
 package api
 
 import (
-	"github.com/aelaster/go-taco/model"
 	"strings"
+
+	"github.com/aelaster/go-taco/model"
 )
 
 var currentId int
@@ -19,7 +20,7 @@ func init() {
 func RepoCreateMenuItem(t model.MenuItem) model.MenuItem {
 	currentId += 1
 	t.Id = currentId
-	menuItems = append( menuItems, t )
+	menuItems = append(menuItems, t)
 	return t
 }
 
@@ -36,7 +37,7 @@ func RepoCalculateCost(items model.OrderItems) model.OrderCost {
 	}
 
 	if totalQuantity >= 4 {
-		totalCost = ( totalCost * 4 ) / 5
+		totalCost = (totalCost * 4) / 5
 	}
 
 	return model.OrderCost{TotalCost: totalCost, TotalQuantity: totalQuantity}

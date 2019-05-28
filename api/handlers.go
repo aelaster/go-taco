@@ -3,10 +3,11 @@ package api
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/aelaster/go-taco/model"
 	"io"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/aelaster/go-taco/model"
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
@@ -24,7 +25,7 @@ func MenuItemCalculate(w http.ResponseWriter, r *http.Request) {
 	if err := r.Body.Close(); err != nil {
 		panic(err)
 	}
-	
+
 	if err := json.Unmarshal(body, &orderItems); err != nil {
 		w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 		w.WriteHeader(422) // unprocessable entity

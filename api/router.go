@@ -1,9 +1,10 @@
 package api
 
 import (
+	"net/http"
+
 	"github.com/aelaster/go-taco/utils"
 	"github.com/gorilla/mux"
-	"net/http"
 )
 
 func NewRouter() *mux.Router {

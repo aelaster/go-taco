@@ -1,9 +1,10 @@
 package main
 
 import (
-	"github.com/aelaster/go-taco/api"
 	"log"
 	"net/http"
+
+	"github.com/aelaster/go-taco/api"
 )
 
 func main() {
