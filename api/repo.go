@@ -7,7 +7,6 @@ import (
 )
 
 var currentId int
-
 var menuItems model.MenuItems
 
 func init() {
@@ -25,8 +24,8 @@ func RepoCreateMenuItem(t model.MenuItem) model.MenuItem {
 }
 
 func RepoCalculateCost(items model.OrderItems) model.OrderCost {
-	var totalCost = 0
-	var totalQuantity = 0
+	totalCost := 0
+	totalQuantity := 0
 	for _, item := range items {
 		for _, menuItem := range menuItems {
 			if strings.ToLower(menuItem.Name) == strings.ToLower(item.Name) {
